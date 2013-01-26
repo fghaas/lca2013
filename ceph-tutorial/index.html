@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Hands On With Ceph</title>
+    <title>Ceph Tutorial (linux.conf.au 2013)</title>
     <link rel="stylesheet" type="text/css" href="impress.css" />
     <link rel="stylesheet" type="text/css" href="impress-override.css" />
   </head>
@@ -15,23 +15,26 @@
     <div id="impress">
       <div class="step slide" data-x="0" data-y="-20000" data-scale="1">
 	<div style="text-align: right;">
-	  <h1>Hands-On With Ceph</h1>
-	  <h3>Object Storage, Block Storage, Filesystem &amp; More</h3>
+	  <img style="margin-bottom: 1em" src="Ceph_Logo_Stacked.svg"/>
+	  <h3>Object storage, block storage, file system,<br/>
+	  replication, massive scalability,<br/> and then some!</h3>
 	  <h5>linux.conf.au 2013</h5>
 	  <p>Canberra, ACT, Australia</p>
-	  <p>Jan 31, 2013</p>
+	  <p>Feb 1, 2013</p>
 	</div>
       </div>
       <div class="step" data-x="0" data-y="-22000" data-scale="1">
-	<p>Who the <strong>$?#%</strong> am I?</p>
+	<p>Who the <strong>$?#%</strong> are we?</p>
       </div>
       <div class="step" data-x="0" data-y="-24000" data-scale="1">
-	<p>Florian Haas</p>
-	<p><code>florian@hastexo.com</code></p>
+	<p>Tim Serong</p>
+	<p><code>tserong@suse.com</code></p>
+	<p class="small">Doing real work, cartooning</p>
       </div>
       <div class="step" data-x="0" data-y="-26000" data-scale="1">
-	<img src="hastexo_logo.svg" />
-	<p><br/><a href="http://www.hastexo.com">www.hastexo.com</a>
+	<p>Florian Haas</p>
+	<p><code>florian@hastexo.com</code></p>
+	<p class="small">Babbling</p>
       </div>
       <div class="step opaque" data-x="0" data-y="0" data-scale="10">
 	<img class="full" src="Ceph_Logo_Stacked.svg"/>
@@ -88,23 +91,22 @@
 	<p>Now what is so special about that?</p>
       </div>
       <div class="step" data-scale="2" data-x="-34000" data-y="-22000" data-rotate="90">
-	<p>Think of how you checked into your <strong>hotel</strong>
-	when you arrived here.</p>
-	<img class="with-heading" src="hotel.jpg"/>
-	<p class="caption"><a href="http://www.flickr.com/photos/ncindc/4090778770">Photo</a> credit: <a href="http://www.flickr.com/photos/NCinDC/"><code>NCinDC</code></a> CC-BY 2.0</p> 
+	<p>Think of how you check into a <strong>hotel</strong>
+	when travel(l)ing.</p>
+	<img class="with-heading" src="images/hotel-ceph.svg"/>
       </div>
       <div class="step" data-scale="2" data-x="-36000" data-y="-22000" data-rotate="90">
-	<p>You probably went here:</p>
+	<p>You go here:</p>
 	<img class="with-heading" src="frontdesk.jpg"/>
 	<p class="caption"><a href="http://www.flickr.com/photos/34128007@N04/7049818919/">Photo</a> credit: <a href="http://www.flickr.com/photos/prayitno/"><code>prayitno</code></a> CC-BY 2.0</p> 
       </div>
       <div class="step" data-scale="2" data-x="-38000" data-y="-22000" data-rotate="90">
-	<p>And got one of these:</p>
-	<img class="with-heading" src="keycard.jpg"/>
-	<p class="caption"><a href="http://www.flickr.com/photos/kowitz/5610081355/">Photo</a> credit: Braden Kowitz <a href="http://www.flickr.com/photos/kowitz/"><code>kowitz</code></a> CC-BY-SA 2.0.</p>
+	<p>And get one of these:</p>
+	<img class="with-heading" src="images/keys.svg"/>
+	<p class="small">(If your hotel is kinda oldsk00l, at least.)</p>
       </div>
       <div class="step" data-scale="2" data-x="-40000" data-y="-22000" data-rotate="90">
-	<p>Front desk, key card: <strong>central data lookup</strong>
+	<p>Front desk, keys: <strong>central data lookup</strong>
 	(with caching)</p>
       </div>
       <div class="step" data-scale="2" data-x="-42000" data-y="-22000" data-rotate="90">
@@ -130,12 +132,16 @@
 	<p>We could also <strong>build several identical buildings,</strong> and assign guests on a <strong>pseudo-random basis.</strong></p>
       </div>
       <div class="step opaque" data-scale="2" data-x="-48000" data-y="-15000" data-rotate="90">
-	<img src="hotels.jpg"></iframe>
+	<img src="images/hotels.svg"></iframe>
       </div>
       <div class="step" data-scale="2" data-x="-48000" data-y="-14000" data-rotate="90">
       </div>
+      <div class="step" data-scale="2" data-x="-48000" data-y="-13000" data-rotate="90">
+      </div>
+      <div class="step" data-scale="2" data-x="-48000" data-y="-10000" data-rotate="90">
+      </div>
       <div class="step" data-scale="2" data-x="-50000" data-y="-22000" data-rotate="90">
-	<p>Several buildings, random assignment: <strong>distributed,
+	<p>Several buildings, pseudo-random assignment: <strong>distributed,
 	partitioned hashtable</strong></p>
       </div>
       <div class="step" data-scale="2" data-x="-52000" data-y="-22000" data-rotate="90">
@@ -144,17 +150,17 @@
       <div class="step" data-scale="10" data-x="-52000" data-y="-22000" data-rotate="90">
 	<p><strong class="gigantic">gigantic?</strong></p>
       </div>
-      <div class="step" data-scale="2" data-x="-54000" data-y="-22000" data-rotate="90">
+      <div class="step opaque" data-scale="2" data-x="-54000" data-y="-22000" data-rotate="90">
 	<p>Like, <strong>a billion</strong> rooms?</p>
+	<img class="with-heading" src="images/hotel-exponential.svg"></iframe>
       </div>
       <div class="step" data-scale="2" data-x="-56000" data-y="-22000" data-rotate="90">
 	<p>Room numbers? <strong>Meaningless.</strong></p>
-	<p class="huge"># 156,398,481</p>
+	<img class="with-heading" src="images/keys.svg"/>
       </div>
       <div class="step" data-scale="2" data-x="-58000" data-y="-22000" data-rotate="90">
 	<p>Is your room even <strong>still there?</strong></p>
-	<p class="small">What are the odds that it's <strong>on
-	fire,</strong> right now?</p>
+	<img class="with-heading" src="images/room-on-fire.svg"></iframe>
       </div>
       <div class="step" data-scale="2" data-x="-60000" data-y="-22000" data-rotate="90">
 	<p>Remember:<br/> <strong>at scale,</strong> <strong>something</strong> always fails.</p>
@@ -166,21 +172,22 @@
 	<p>(1) Something you <strong>already know</strong> about yourself</p>
       </div>
       <div class="step" data-scale="2" data-x="-64000" data-y="-18000" data-rotate="90">
-	<img class="full" src="eye.jpg"/>
-	<p class="caption"><a href="http://www.flickr.com/photos/rebelcan/7056283073">Photo</a> credit: <a href="http://www.flickr.com/photos/rebelcan/">Sean Hagen (<code>rebelcan</code>)</a> CC-BY 2.0</p> 
+	<img class="full" src="images/identity.svg"/>
       </div>
       <div class="step" data-scale="2" data-x="-66000" data-y="-22000" data-rotate="90">
 	<p>(2) A system that takes that information and <strong>automatically guides</strong> you to your room.</p>
 	<p class="small">So you no longer <strong>care</strong> where your room is.</p>
       </div>
       <div class="step" data-scale="2" data-x="-66000" data-y="-18000" data-rotate="90">
-	<img class="full" src="irisreader.png"/>
-	<p class="caption"><a href="http://www.flickr.com/photos/schnaars/3465937505">Photo</a> credit: <a href="http://www.flickr.com/photos/schnaars/"><code>schnaars</code></a> CC-BY 2.0</p> 
+	<img class="full" src="images/guides.svg"/>
       </div>
       <div class="step" data-scale="2" data-x="-68000" data-y="-22000" data-rotate="90">
 	<p>(3) Robots that <strong>automatically move</strong> all your
 	stuff when you <strong>can't enter</strong> your room.</p>
 	<p class="small">Think housekeeping.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-68000" data-y="-18000" data-rotate="90">
+	<img class="full" src="images/cephbot.svg"/>
       </div>
       <div class="step" data-scale="2" data-x="-70000" data-y="-22000" data-rotate="90">
 	<p>(4) Magic replicating minions that <strong>duplicate all
@@ -188,8 +195,11 @@
 	elsewhere</strong> as soon as you've entered your room.</p>
 	<p class="small">Because you don't want to lose them in a fire.</p>
       </div>
+      <div class="step" data-scale="2" data-x="-70000" data-y="-18000" data-rotate="90">
+	<img class="full" src="images/replomat.svg"/>
+      </div>
       <div class="step" data-scale="2" data-x="-72000" data-y="-22000" data-rotate="90">
-	<p>And Ceph does exactly that for you.</p>
+	<p>And Ceph does exactly that for us.</p>
 	<p>All of it.</p>
       </div>
       <div id="crush" class="step" data-scale="2" data-x="-74000" data-y="-22000" data-rotate="90">
@@ -384,7 +394,8 @@
       <div id="end" class="step" data-x="0" data-y="60000">
 	<p>This talk:</p>
 	<p><a href="http://www.hastexo.com/lceu2012">http://www.hastexo.com/lceu2012</a></p>
-	<p><a href="https://github.com/fghaas/lceu2012">https://github.com/fghaas/lceu2012</a></p>
+	<p><a href="https://github.com/fghaas/lceu2012">https://github.com/fghaas/lca2013</a></p>
+	<p><a href="https://github.com/fghaas/lceu2012">https://github.com/tserong/lca2013</a></p>
 	<a href="http://creativecommons.org/licenses/by-sa/2.0/"><img src="by-sa.svg"></img></a>
       </div>
     </div>
