@@ -8,7 +8,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.2"
-   viewBox="0 0 17080.125 16524.125"
+   viewBox="0 0 17080.12 17000"
    preserveAspectRatio="xMidYMid"
    clip-path="url(#presentation_clip_path)"
    xml:space="preserve"
@@ -37,9 +37,9 @@
    fit-margin-left="0"
    fit-margin-right="0"
    fit-margin-bottom="0"
-   inkscape:zoom="0.020221904"
-   inkscape:cx="9810.125"
-   inkscape:cy="8937.8228"
+   inkscape:zoom="0.040443808"
+   inkscape:cx="13378.818"
+   inkscape:cy="12056.105"
    inkscape:window-x="49"
    inkscape:window-y="24"
    inkscape:window-maximized="1"
@@ -176,7 +176,7 @@
    id="id2"
    class="Master_Slide"
    clip-path="url(#presentation_clip_path)"
-   transform="translate(-984.87499,-2269)">
+   transform="translate(-984.87499,-1793.125)">
   <g
    id="bg-id2"
    visibility="visible"
@@ -202,7 +202,7 @@
    visibility="visible"
    clip-path="url(#presentation_clip_path)"
    style="visibility:visible"
-   transform="translate(-984.87499,-2269)">
+   transform="translate(-984.87499,-1793.125)">
   <g
    class="com.sun.star.drawing.CustomShape"
    id="g3027">
@@ -228,10 +228,12 @@
    id="text3037">c</text>
 
 
+
       <text
    x="1850"
    y="12971"
    id="text3039">i</text>
+
 
 
       <text
@@ -240,10 +242,12 @@
    id="text3041">n</text>
 
 
+
       <text
    x="2345"
    y="12971"
    id="text3043">d</text>
+
 
 
       <text
@@ -252,10 +256,12 @@
    id="text3045">e</text>
 
 
+
       <text
    x="3107"
    y="12971"
    id="text3047">r</text>
+
 
 
       <text
@@ -264,10 +270,12 @@
    id="text3049">-</text>
 
 
+
       <text
    x="3569"
    y="12971"
    id="text3051">a</text>
+
 
 
       <text
@@ -276,10 +284,12 @@
    id="text3053">p</text>
 
 
+
       <text
    x="4301"
    y="12971"
    id="text3055">i</text>
+
 
 </g>
      <rect
@@ -317,10 +327,12 @@
    id="text3069">n</text>
 
 
+
       <text
    x="5173"
    y="18051"
    id="text3071">o</text>
+
 
 
       <text
@@ -329,10 +341,12 @@
    id="text3073">v</text>
 
 
+
       <text
    x="5863"
    y="18051"
    id="text3075">a</text>
+
 
 </g>
      <rect
@@ -370,10 +384,12 @@
    id="text3089">n</text>
 
 
+
       <text
    x="10253"
    y="18051"
    id="text3091">o</text>
+
 
 
       <text
@@ -382,10 +398,12 @@
    id="text3093">v</text>
 
 
+
       <text
    x="10943"
    y="18051"
    id="text3095">a</text>
+
 
 </g>
      <rect
@@ -423,10 +441,12 @@
    id="text3109">c</text>
 
 
+
       <text
    x="14423"
    y="12971"
    id="text3111">i</text>
+
 
 
       <text
@@ -435,10 +455,12 @@
    id="text3113">n</text>
 
 
+
       <text
    x="14918"
    y="12971"
    id="text3115">d</text>
+
 
 
       <text
@@ -447,10 +469,12 @@
    id="text3117">e</text>
 
 
+
       <text
    x="15680"
    y="12971"
    id="text3119">r</text>
+
 
 
       <text
@@ -459,10 +483,12 @@
    id="text3121">-</text>
 
 
+
       <text
    x="16142"
    y="12971"
    id="text3123">a</text>
+
 
 
       <text
@@ -471,10 +497,12 @@
    id="text3125">p</text>
 
 
+
       <text
    x="16874"
    y="12971"
    id="text3127">i</text>
+
 
 </g>
      <rect
@@ -686,7 +714,7 @@
 <g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031"
-   transform="matrix(10.876819,0,0,-10.876819,-6385.1618,7346.9716)"><g
+   transform="matrix(10.876819,0,0,-10.876819,-6385.1618,7822.8466)"><g
      id="g3033-4"
      transform="scale(0.1,0.1)"><g
        id="g3035-0"><g
@@ -722,7 +750,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-3"
-   transform="matrix(10.876819,0,0,-10.876819,2219.3692,2006.2282)"><g
+   transform="matrix(10.876819,0,0,-10.876819,2219.3692,2482.1032)"><g
      id="g3033-6-7"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-6"><g
@@ -758,7 +786,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-1"
-   transform="matrix(10.876819,0,0,-10.876819,3900.7143,4379.8919)"><g
+   transform="matrix(10.876819,0,0,-10.876819,3900.7143,4855.7669)"><g
      id="g3033-6-8"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-2"><g
@@ -794,7 +822,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-5"
-   transform="matrix(10.876819,0,0,-10.876819,6768.8914,4083.1839)"><g
+   transform="matrix(10.876819,0,0,-10.876819,6768.8914,4559.0589)"><g
      id="g3033-6-4"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-5"><g
@@ -830,7 +858,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-7"
-   transform="matrix(10.876819,0,0,-10.876819,9686.5196,1956.7769)"><g
+   transform="matrix(10.876819,0,0,-10.876819,9686.5196,2111.2183)"><g
      id="g3033-6-2"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-3"><g
@@ -866,7 +894,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-2"
-   transform="matrix(10.876819,0,0,-10.876819,9834.8734,5022.7592)"><g
+   transform="matrix(10.876819,0,0,-10.876819,9834.8734,5498.6342)"><g
      id="g3033-6-3"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-0"><g
@@ -902,7 +930,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-74"
-   transform="matrix(10.876819,0,0,-10.876819,13543.723,2253.4848)"><g
+   transform="matrix(10.876819,0,0,-10.876819,13543.723,2729.3598)"><g
      id="g3033-6-0"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-06"><g
@@ -938,7 +966,7 @@
            inkscape:connector-curvature="0" /></g></g></g></g><g
    style="fill-rule:evenodd;stroke-width:28.22200012;stroke-linejoin:round"
    id="g3031-5-6"
-   transform="matrix(10.876819,0,0,-10.876819,15620.679,3588.6707)"><g
+   transform="matrix(10.876819,0,0,-10.876819,15620.679,4064.5457)"><g
      id="g3033-6-05"
      transform="scale(0.1,0.1)"><g
        id="g3035-4-1"><g
