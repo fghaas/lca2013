@@ -1,0 +1,205 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Ceph: The Storage Stack for OpenStack</title>
+    <link rel="stylesheet" type="text/css" href="impress.css" />
+    <link rel="stylesheet" type="text/css" href="impress-override.css" />
+  </head>
+  <body class="impress-not-supported">
+    <div class="fallback-message">
+      <p>Your browser <b>doesn't support the features required</b> by
+      impress.js, so you are presented with a simplified version of
+      this presentation.</p>
+      <p>For the best experience please use the latest <b>Chrome</b>,
+      <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+    <div id="impress">
+      <div class="step slide" data-x="0" data-y="-20000" data-scale="1">
+	<img src="ceph-openstack.svg" style="float:left; margin-right: 5%;"/>
+	<div style="text-align: right;">
+	  <h1>Ceph:<br/>The Storage Stack for OpenStack</h1>
+	  <h3>Objects, Volumes, Images &amp; More</h3>
+	  <p>Florian Haas<br/><code>florian@hastexo.com</code><br/></p>
+	  <p>OpenStack Miniconf<br/>linux.conf.au 2013<br/>Canberra, ACT, Australia<br/>Jan 29, 2013</p>
+	</div>
+      </div>
+      <div class="step invisible" data-x="0" data-y="0" data-scale="5">
+	<img class="fit" src="Ceph_Logo_Stacked.svg"/>
+      </div>
+      <div class="step invisible" data-x="0" data-y="0" data-scale="5">
+	<img class="fit" src="openstack-logo.svg"/>
+      </div>
+      <div id="overview" class="step" data-x="0" data-y="0" data-scale="40">
+      </div>
+      <div class="step opaque" data-x="-10000" data-y="-10000" data-scale="10">
+	<h3>Native Object Storage</h3>
+	<img class="with-heading" src="ObjectStorage.svg" />
+      </div>
+      <div class="step opaque" data-x="10000" data-y="-10000" data-scale="10">
+	<h3>Block Storage</h3>
+	<img class="with-heading" src="BlockStorage.svg" />
+      </div>
+      <div class="step opaque" data-x="10000" data-y="10000" data-scale="10">
+	<h3>ReSTful Object Storage</h3>
+	<img class="with-heading" src="ReSTfulObjectStorage.svg" />
+      </div>
+      <div class="step opaque" data-x="-10000" data-y="10000" data-scale="10">
+	<h3>Distributed Filesystem</h3>
+	<img class="with-heading" src="FileStorage.svg">
+      </div>
+      <div class="step" data-x="0" data-y="0" data-scale="40">
+      </div>
+      <div class="step" data-x="-10000" data-y="-10000" data-scale="10">
+      </div>
+      <div id="object-storage-start" class="step" data-scale="2" data-x="-40000" data-y="-30000">
+	<p>Ceph is based on a <strong>distributed, autonomic, redundant</strong> native <strong>object store</strong> named <strong>RADOS.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-28000">
+	<p class="left"><strong>R</strong>eliable<br/>
+	<strong>A</strong>utonomic<br/>
+	<strong>D</strong>istributed<br/>
+	<strong>O</strong>bject<br/>
+	<strong>S</strong>tore</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-26000">
+	<p>RADOS is a <strong>flat namespace.</strong></p>
+	<p>Each <strong>object</strong> has a <strong>name,</strong>
+	any number of <strong>attributes,</strong> and a
+	<strong>payload</strong> of (almost) arbitrary size.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-24000">
+	<p>Objects are assigned to <strong>Placement Groups</strong> (PGs).</p>
+	<p>Each PG has an ordered list of <strong>Object Storage
+	Devices</strong> (OSDs) where its contents are stored in a
+	<strong>redundant</strong> fashion.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-22000">
+	<p>Object placement is entirely <strong>algorithmic.</strong></p>
+	<p>There is no central lookup or distributed hashtable.</p>
+      </div>
+      <div id="crush" class="step" data-scale="2" data-x="-40000" data-y="-20000">
+	<p class="left"><strong>C</strong>ontrolled<br/>
+	<strong>R</strong>eplication<br/>
+	<strong>U</strong>nder<br/>
+	<strong>S</strong>calable<br/>
+	<strong>H</strong>ashing</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-18000">
+	<p>Built for <strong><span class="huge">big</span></strong> data.</p>
+      </div>
+      <div class="step" data-scale="20" data-x="-40000" data-y="-14000">
+	<p><strong><span class="gigantic">gigantic</span></strong> data, really.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-12000">
+	<p><strong>Lots</strong> of <strong>client APIs.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="-40000" data-y="-8000">
+	<p>Many of these are <strong>fully integrated</strong> with OpenStack.</p>
+      </div>
+      <div class="step" data-x="10000" data-y="-10000" data-scale="10">
+      </div>
+      <div id="block-storage-start" class="step" data-scale="2" data-x="30000" data-y="-26000">
+	<p>RADOS Block Device (RBD) is a
+	<strong>thin&#8209;provisioned</strong> block device interface that
+	<strong>stripes</strong> data across <strong>multiple RADOS
+	objects.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-24000">
+	<p>It supports <strong>cheap, read&#8209;only</strong> redirect&#8209;on&#8209;write <strong>snapshots.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-22000">
+	<p>RBD also supports efficient
+	<strong>cloning</strong>.</p>
+	<p>This makes it very well suited for maintaining
+	template-based <strong>virtual machines.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-20000">
+	<p>RBD comes in two <strong>flavors.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-18000">
+	<p><code>rbd</code> is a kernel-level <strong>block device driver</strong> merged upstream in <strong>Linux 2.6.37.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-16000">
+	<p><code>qemu-rbd</code> is a userspace storage driver for <strong>Qemu</strong> and <strong>KVM.</strong></p>
+	<p>It is built on the <code>librados</code> C API.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-14000">
+	<p>And you can <strong>build images</strong> for <strong>any purpose you like.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-12000">
+	<p>Fully integrated with <strong>Glance</strong> for image storage.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="35000" data-y="-12000">
+	<img class="full" src="glance-rbd.svg"/>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-10000">
+	<p>Fully integrated with <strong>Cinder</strong> for persistent VM block storage.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="-8000">
+	<p>Fully integrated with <strong>Nova</strong> for boot-from-volume.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="35000" data-y="-8000">
+	<img class="full" src="cinder-rbd.svg"/>
+      </div>
+      <div class="step" data-x="10000" data-y="10000" data-scale="10">
+      </div>
+      <div id="restful-storage-start" class="step" data-scale="2" data-x="30000" data-y="12000">
+	<p>Ceph provides <strong>ReSTful HTTP(S)</strong> access to the object store.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="14000">
+	<p>It does so through a <code>FastCGI</code> application, <strong>radosgw.</strong></p>
+	<p>radosgw uses the <code>libradospp</code> C++ API.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="16000">
+	<p>radosgw runs in <strong>any web server</strong> that supports FastCGI.</p>
+	<p>The canonical deployment approach is with <strong>Apache</strong> and <strong>mod_fastcgi.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="18000">
+	<p>radosgw currently understands the <strong>Amazon S3</strong> and <strong>OpenStack Swift</strong> APIs.</p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="20000">
+	<p>radosgw supports <strong>native load balancing</strong> and <strong>scaleout.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="30000" data-y="22000">
+	<p>Now also supports <strong>Keystone.</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="35000" data-y="22000">
+	<img class="full" src="radosgw.svg"/>
+      </div>
+      <div class="step" data-scale="2" data-x="-30000" data-y="12000">
+	<p><strong>What's next?</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="-30000" data-y="14000">
+	<p><strong>Ease of use!</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="-30000" data-y="16000">
+	<p><strong>Testing!</strong></p>
+      </div>
+      <div class="step" data-scale="2" data-x="-30000" data-y="18000">
+	<p><strong>Private Clouds!</strong></p>
+      </div>
+      <div id="thanks" class="step" data-x="0" data-y="55000">
+	<p>Thanks to:</p>
+	<p><strong>Sage Weil</strong> <a href="https://twitter.com/liewegas"><code>@liewegas</code></a> &amp; crew for&nbsp;Ceph</p>
+	<p><strong>Bartek Szopka</strong> <a href="https://twitter.com/bartaz"><code>@bartaz</code></a> for <code>impress.js</code></p>
+	<p><strong>Inktank</strong> <a href="https://twitter.com/inktank"><code>@inktank</code></a> for the Ceph logo</p>
+      </div>
+      <div id="coordinates" class="step" data-x="0" data-y="60000">
+	<h3>Get in touch!</h3>
+	<p><code>florian@hastexo.com</code></p>
+	<p><a href="http://goo.gl/ANHQe">goo.gl/ANHQe</a> (me on Google+)</p>
+	<p><a href="http://twitter.com/hastexo">@hastexo</a> (on Twitter)</p>
+	<p><a href="http://www.hastexo.com">www.hastexo.com</a></p>
+      </div>
+      <div id="end" class="step" data-x="0" data-y="65000">
+	<p>Want this talk?</p>
+	<p class="small"><a href="https://github.com/fghaas/lca2013/openstack-ceph">https://github.com/fghaas/lca2013/openstack-ceph</a></p>
+	<a href="http://creativecommons.org/licenses/by-sa/2.0/" title="This talk, except the OpenStack and Ceph logos, is licensed under the Creative Commons Attribution-ShareAlike 2.0 license."><img src="by-sa.svg"/></a>
+	<p class="caption">(except OpenStack and Ceph logos)</p>
+      </div>
+    </div>
+
+<script src="impress.js"></script>
+<script>impress().init();</script>
+
+  </body>
+</html>
