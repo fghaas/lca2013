@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo start libvirt-bin
+
+sudo virsh <<EOF
+shutdown ceph-alice
+shutdown ceph-daisy
+shutdown ceph-eric
+shutdown ceph-frank
+EOF

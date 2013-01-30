@@ -1,0 +1,15 @@
+#!/bin/sh
+
+for i in 11 14 15 16; do
+    ip="192.168.122.$((100+$i))"
+    port="$((4200+$i))"
+
+    shellinaboxd \
+	--background="`dirname $0`/shellinaboxd.$i.pid" \
+	--localhost-only \
+	--no-beep \
+	--disable-ssl \
+	--port=$port \
+	--css=shellinabox.css \
+	--service /:florian:florian:HOME:"env SSH_AUTH_SOCK=$SSH_AUTH_SOCK ssh -tt root@${ip} screen -x"
+done
