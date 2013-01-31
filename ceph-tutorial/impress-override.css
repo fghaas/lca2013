@@ -45,12 +45,8 @@ body {
   background: radial-gradient(ellipse at center, #f0f0f0 0%,#bebebe 31%,#12547a 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#12547a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-  font-family: 'Raleway', serif;
+  font-family: 'tserong', serif;
   font-weight: 200;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'tserong';
 }
 
 strong {
