@@ -133,7 +133,7 @@ img.with-heading {
   max-width: 100%;
 }
 
-code {
+code, a {
   font-family: 'Josefin Slab', monospace;
 }
 
